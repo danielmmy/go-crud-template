@@ -1,0 +1,15 @@
+version: '3'
+services:
+  # go crud template
+  crud-template:
+    build:
+      context: ./
+      dockerfile: go_crud_template.dockerfile
+    restart: always
+    ports:
+      - "9007:80"
+    deploy:
+      mode: replicated
+      replicas: 1
+    environment:
+      - PORT=80
